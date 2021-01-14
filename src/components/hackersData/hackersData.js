@@ -2,7 +2,7 @@ import React from 'react'
 import CardContainer from '../cardContainers/cardContainer'
 import './hackersData.css'
 const HackersData = (props) => {
-    const photo_url = `http://localhost:9000/hacker/${props.hacker._id}/photo`
+    const photo_url = `https://hacker-voting.herokuapp.com/hacker/${props.hacker._id}/photo`
  return (<CardContainer>
         <div className="content">
             <span className="name-header"> <h1>{props.hacker.name}</h1></span>
