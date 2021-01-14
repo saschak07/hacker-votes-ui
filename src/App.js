@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+
 import './App.css';
+import LoginScreen from './components/loginComponent/login'
+import LoginForm from './components/loginForm/loginForm'
+import Signup from './components/signupPage/signup'
+import { BrowserRouter,Route,Switch } from 'react-router-dom';
+import {Authcontext} from './context/authContext'
+import { useState } from 'react';
+import DashBoard from './components/dashBoard/dashBoard'
 
 function App() {
+  const [auth,setAuth] = useState({})
   return (
+    <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+      <Authcontext.Provider value={[auth,setAuth]}>
+      <Route path="/login" component={LoginForm}/>
+      <Route path="/signup" component={Signup}/>
+      <Route path="/home" component={LoginScreen}/>
+      <Route path="/dock" component={DashBoard}/>
+      </Authcontext.Provider>
+      </Switch>
     </div>
+    </BrowserRouter>
   );
 }
 

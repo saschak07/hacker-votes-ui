@@ -1,0 +1,23 @@
+.details-body{
+    width: 60%;
+    margin-top: 2%;
+    margin-left: 10%;
+    border-radius: 25px;
+    opacity: 0.8;
+}
+
+.content{
+    
+    padding: 0.2%;
+    margin-left: 2%;
+
+}
+.button{
+    margin-bottom: 1%;
+}
+.header{
+    font-family: "Times New Roman", Times, serif;
+    color: blue;
+    font-weight: 900;
+    text-decoration: underline;
+}

@@ -1,0 +1,24 @@
+.name-header{
+    color: blue;
+    font-weight: bold;
+}
+.lebel{
+    color: purple;
+    font-weight: bold;
+}
+.vote-lebel{
+    color: rgb(50, 124, 7);
+    font-weight: bold;
+}
+.content{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+ .img-content{
+     width: 100px;
+     height: 100px;
+ }
+ .cellcontent{
+     width: 150px;
+ }
