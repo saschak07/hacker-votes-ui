@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react'
 import CardContainer from '../cardContainers/cardContainer'
 import './signup.css'
 import axios from 'axios'
-import {Authcontext} from '../../context/authContext'
+import {useDispatch} from 'react-redux'
+import * as actiontype from '../store/action'
 const SignUp = (props) =>{
         const [userCreds,setUserCreds] = useState({})
-        const [auth,setAuth] = useContext(Authcontext)
+        const dispatch = useDispatch()
         const handleCancel = () =>{
-            props.history.push('/home')
+            props.history.push('/')
         }
         const handleFieldChange = (value,field) =>{
             const userData = userCreds
@@ -20,7 +21,10 @@ const SignUp = (props) =>{
                     throw new Error('Password and confirmed password did not match!!!')
                 }
                 const response = await axios.post('https://hacker-voting.herokuapp.com/user/signUp', userCreds)
-                await setAuth(response.data)
+                dispatch({
+                    type: actiontype.SET_AUTH,
+                    data: response.data
+                })
                 props.history.push('/dock')
             }catch(error){
                 console.log(error)

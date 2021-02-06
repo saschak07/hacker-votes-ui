@@ -1,24 +1,24 @@
 import React,{useState,useEffect,useContext} from 'react'
 import Navbar from '../navbar/navbar'
 import HackerDetails from '../hackerDetails/hackerDetails';
-import {Authcontext} from '../../context/authContext'
 import HackersData from '../hackersData/hackersData'
+import {useSelector} from 'react-redux'
 import axios from 'axios'
 const DashBoard = () =>{
     console.log('dash board rendered')
     const [hackers,setHackers] = useState([])
     const [isDetailsclicked, setIsDetailsclicked] = useState(false)
     const [selectedHacker,setselectedHacker] = useState(null)
-    const [auth,setAuth] = useContext(Authcontext)
+    const auth = useSelector(state => state)
     useEffect(() => {
         const fetchData = async() => {
+            console.log(auth)
             try{
                 const response = await axios.get('https://hacker-voting.herokuapp.com/hackers',{
                     headers:{
-                        'Authorization':`Basic ${auth.token}`
+                        'Authorization':`Basic ${auth.authData.token}`
                     }
                 })
-                console.log(auth)
                 console.log(response.data)
                 await setHackers(response.data)
             }catch(e){
@@ -40,7 +40,7 @@ const DashBoard = () =>{
 
 return(
     <div>
-        <Navbar user={auth}/>
+        <Navbar user={auth.authData}/>
         {isDetailsclicked ?<HackersData hacker = {selectedHacker}
         detailsclicked ={even=>handledetailsClicked()} />
         : hackers.map(data => <HackerDetails key = {data._id} name={data.name}

@@ -1,15 +1,16 @@
-import React,{useContext,useState} from 'react'
+import React,{useState} from 'react'
 import CardContainer from '../cardContainers/cardContainer'
 import './loginForm.css'
-import {Authcontext} from '../../context/authContext'
 import axios from 'axios'
+import {useDispatch} from 'react-redux'
+import * as actiontype from '../store/action'
 
 const LoginForm = (props) => {
-    const [auth,setAuth] = useContext(Authcontext)
+    const dispatch = useDispatch()
     const [userName,setUserName] = useState('')
     const[passwd, setPasswd] = useState('')
     const handleCancel = () =>{
-        props.history.push('/home')
+        props.history.push('/')
     }
     const changeUserName = (value) => {
         setUserName(value)
@@ -22,8 +23,10 @@ const LoginForm = (props) => {
         try{
             const response = await axios.post('https://hacker-voting.herokuapp.com/user/login',creds);
             console.log(response)
-            await setAuth(response.data)
-            console.log(auth)
+            dispatch({
+                type: actiontype.SET_AUTH,
+                data: response.data
+            })
             props.history.push('/dock')
         }
         

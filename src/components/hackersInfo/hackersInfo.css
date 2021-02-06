@@ -1,0 +1,43 @@
+.name-header{
+    color: blue;
+    font-weight: bold;
+}
+.lebel{
+    color: purple;
+    font-weight: bold;
+}
+.vote-lebel{
+    color: rgb(50, 124, 7);
+    font-weight: bold;
+}
+.content{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+ .img-content{
+     width: 100px;
+     height: 100px;
+     margin-top: 2%;
+ }
+ .paragraphs{
+     font-weight: bold;
+     color: blueviolet;
+ }
+ .cellcontent{
+     width: 300px;
+ }
+.inputs{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 200px;
+}
+ .table-content{
+     margin-left: 5%;
+     color: rgb(2, 2, 2);
+ }
+ .button{
+     margin-left: 30%;
+     width: 200px
+ }
+ 
