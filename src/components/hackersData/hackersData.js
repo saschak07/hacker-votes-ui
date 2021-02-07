@@ -1,10 +1,30 @@
-import React from 'react'
+import React,{useState} from 'react'
 import CardContainer from '../cardContainers/cardContainer'
 import './hackersData.css'
 const HackersData = (props) => {
     const photo_url = `https://hacker-voting.herokuapp.com/hacker/${props.hacker._id}/photo`
- return (<CardContainer>
-        <div className="content">
+    const [clikedVoting,setClickedVoting] = useState(false)
+    const handleVote = () => {
+        setClickedVoting(true)
+    }
+    const content = clikedVoting?
+    <div>
+        <span className="name-header"> <h1 className="confirm-header">you are about to vote!</h1></span>
+        <div className="confirm-content">
+        <p className="lebel">Candidate: {props.hacker.name}</p>  <br/>
+        <img alt="" src={photo_url} className="w3-round img-content confirm-image"
+                    onError={(event)=> {event.target.onError=null;
+                    event.target.src=process.env.PUBLIC_URL+"/hacker.jpg"}}/>
+        <br/>
+        <p className="lebel">once you confirm your vote it cant be edited without admin intervention!</p>  <br/>
+        </div>
+        <button className="w3-btn w3-red button-title"
+            >Confirm vote!</button>
+        <button className="w3-btn w3-blue button-title"
+            onClick={props.detailsclicked}
+            >close</button>
+    </div>
+    :<div className="content">
             <span className="name-header"> <h1>{props.hacker.name}</h1></span>
             <div className="w3-cell-row content">
                 <div className = "w3-cell cellcontent">
@@ -33,10 +53,14 @@ const HackersData = (props) => {
                     </span>
                 </div>
             </div>
+            <button className="w3-btn w3-green button-title" onClick={event=>handleVote()}
+            >Vote</button>
             <button className="w3-btn w3-blue button-title"
             onClick={props.detailsclicked}
             >close</button>
         </div>
+ return (<CardContainer>
+        {content}
  </CardContainer>)
 }
 
