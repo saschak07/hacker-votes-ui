@@ -6,9 +6,6 @@ const  NavBar = (props) =>{
   const handleInsertData = () => {
     history.push('/addHackers')
   }
-  const handleDockloader = () => {
-    history.push('/dock')
-  }
   const adminControls = props.user.isAdmin?<div><button className="w3-bar-item w3-button" 
   onClick={event=>handleInsertData()}>Insert new Hackers</button>
   <button className="w3-bar-item w3-button"

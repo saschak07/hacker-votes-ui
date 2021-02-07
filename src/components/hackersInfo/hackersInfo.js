@@ -16,6 +16,9 @@ const handleValueChange =(value,field) =>{
     data[field] = value
     setHackerData(data)
 }
+const handleClose = () =>{
+    props.history.push('/dock')
+}
 const handleSubmit = async() =>{
     console.log(hackerData)
     console.log(auth)
@@ -28,6 +31,15 @@ const handleSubmit = async() =>{
         }
         )
         console.log(response.data)
+        const form = new FormData()
+        form.append("photo",hackerData.upload,hackerData.upload.name)
+        const imageResponse = await axios.post(`https://hacker-voting.herokuapp.com/hacker/${response.data._id}/photo`,
+        form,{
+            headers:{
+                'Authorization':`Basic ${auth.authData.token}`
+            }
+        })
+        console.log(imageResponse.data)
         props.history.push('/dock')
     }catch(e){
         console.log(e)
@@ -85,7 +97,7 @@ return(<CardContainer>
             </div>
         </div>
         <button className="button w3-btn w3-green" onClick={event=>handleSubmit()}>Submit</button>
-        <button className="button w3-btn w3-blue">Close</button>
+        <button className="button w3-btn w3-blue" onClick={event=>handleClose()}>Close</button>
     </div>
 </CardContainer>)
 }
