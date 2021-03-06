@@ -1,11 +1,29 @@
 import React,{useState} from 'react'
+import {useSelector} from 'react-redux'
+import {useHistory} from 'react-router-dom'
 import CardContainer from '../cardContainers/cardContainer'
 import './hackersData.css'
+import axios from 'axios'
 const HackersData = (props) => {
     const photo_url = `https://hacker-voting.herokuapp.com/hacker/${props.hacker._id}/photo`
     const [clikedVoting,setClickedVoting] = useState(false)
+    const auth = useSelector(state => state)
+    const history = useHistory()
     const handleVote = () => {
         setClickedVoting(true)
+    }
+    const handleConfirmVote = () =>{
+        axios.put(`https://hacker-voting.herokuapp.com/hackers/vote/${props.hacker._id}`,null,
+        {
+            headers:{
+                'Authorization':`Basic ${auth.authData.token}`
+            }
+        }
+        ).then(res => {
+            console.log(res)
+        }).catch(error => console.log(error))
+
+        history.push('/')
     }
     const content = clikedVoting?
     <div>
@@ -16,11 +34,11 @@ const HackersData = (props) => {
                     onError={(event)=> {event.target.onError=null;
                     event.target.src=process.env.PUBLIC_URL+"/hacker.jpg"}}/>
         <br/>
-        <p className="lebel">once you confirm your vote it cant be edited without admin intervention!</p>  <br/>
+        <p className="lebel">once you confirm your vote it cant be edited without admin intervention!</p> 
         </div>
-        <button className="w3-btn w3-red button-title"
-            >Confirm vote!</button>
-        <button className="w3-btn w3-blue button-title"
+        <button className="w3-btn w3-red confitm-button"
+            onClick={event=>handleConfirmVote()}>Confirm vote!</button>
+        <button className="w3-btn w3-blue confitm-button"
             onClick={props.detailsclicked}
             >close</button>
     </div>
