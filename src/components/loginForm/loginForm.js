@@ -4,6 +4,7 @@ import './loginForm.css'
 import axios from 'axios'
 import {useDispatch} from 'react-redux'
 import * as actiontype from '../store/action'
+import HeaderRibbon from '../headerRibbon/headerRibbon'
 
 const LoginForm = (props) => {
     const dispatch = useDispatch()
@@ -36,10 +37,13 @@ const LoginForm = (props) => {
     }
 
  return(
+     <div>
+         <HeaderRibbon/>
      <div className="container">
-    <CardContainer>
-        <div className="contents">
-        <h1> Login ...</h1>
+    <CardContainer className="container">
+        <div className = "contents">
+        <h2 className="header-title"> Login ...</h2>
+        <br/>
         <input type="text" className="w3-input w3-border" placeholder="User Name ..."
         value={userName} onChange={event => changeUserName(event.target.value)}/>
         <br/>
@@ -49,6 +53,7 @@ const LoginForm = (props) => {
         <button className="w3-btn w3-grey buttons" onClick={(event)=>handleCancel()}>Cancel</button>
         </div>
     </CardContainer>
+    </div>
     </div>
  )
 }

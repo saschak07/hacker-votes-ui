@@ -4,6 +4,7 @@ import HackerDetails from '../hackerDetails/hackerDetails';
 import HackersData from '../hackersData/hackersData'
 import {useSelector} from 'react-redux'
 import axios from 'axios'
+import './dashBoard.css'
 const DashBoard = () =>{
     console.log('dash board rendered')
     const [hackers,setHackers] = useState([])
@@ -39,7 +40,7 @@ const DashBoard = () =>{
 
 
 return(
-    <div>
+    <div className="dashboard-background">
         <Navbar user={auth.authData}/>
         {isDetailsclicked ?<HackersData hacker = {selectedHacker}
         detailsclicked ={even=>handledetailsClicked()} />

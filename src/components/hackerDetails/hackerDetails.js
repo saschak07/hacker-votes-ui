@@ -4,6 +4,7 @@ import './hackerDetails.css'
 const HackerDetails = (props) => {
     let photo_url = `https://hacker-voting.herokuapp.com/hacker/${props.id}/photo`
     return(
+        <div className="card-container">
         <CardContainer>
             <div className="content">
             <h1><span className="name-header">{props.name}</span></h1>
@@ -24,7 +25,9 @@ const HackerDetails = (props) => {
             </div>
             </div>
             
+            
         </CardContainer>
+        </div>
     )
 }
 

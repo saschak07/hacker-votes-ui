@@ -1,13 +1,13 @@
 .details-body{
-    width: 60%;
+    /* width: 60%;
     margin-top: 2%;
-    margin-left: 10%;
+    margin-left: 10%; */
+    background-color: rgb(173, 200, 231);
     border-radius: 25px;
     opacity: 0.8;
 }
 
 .content{
-    
     padding: 0.2%;
     margin-left: 2%;
 
