@@ -29,12 +29,12 @@ const HackersData = (props) => {
     <div>
         <span className="name-header"> <h1 className="confirm-header">you are about to vote!</h1></span>
         <div className="confirm-content">
-        <p className="lebel">Candidate: {props.hacker.name}</p>  <br/>
+        <p className="lebel-data">Candidate: {props.hacker.name}</p>  <br/>
         <img alt="" src={photo_url} className="w3-round img-content confirm-image"
                     onError={(event)=> {event.target.onError=null;
                     event.target.src=process.env.PUBLIC_URL+"/hacker.jpg"}}/>
         <br/><br/>
-        <p className="lebel">once you confirm your vote it cant be edited without admin intervention!</p> 
+        <p className="lebel-data">once you confirm your vote it cant be edited without admin intervention!</p> 
         </div>
         <button className="w3-btn w3-red confitm-button"
             onClick={event=>handleConfirmVote()}>Confirm vote!</button>

@@ -15,7 +15,7 @@ const HackerDetails = (props) => {
                     event.target.src=process.env.PUBLIC_URL+"/hacker.jpg"}}/>
                 </div>
                 <div className = "w3-cell ">
-                    <h4><span className="lebel">Expert level:{props.expertiseLevel}</span></h4>
+                    <h4><span className="lebel-details">Expert level:{props.expertiseLevel}</span></h4>
                 </div>
                 
                 <div className = "w3-cell "> <button className="w3-btn w3-green"
