@@ -1,5 +1,5 @@
 .contents{
-    margin-top: 30%;
+    margin-top: 10%;
     margin-left: 20%;
     width: 40%
 }
@@ -14,4 +14,12 @@
 
 .input{
     margin-top: 1%;
+}
+.header-title{
+    /* margin-top: 4%; */
+    margin-left: 5%;
+    color:rgb(39, 39, 146);
+    padding-top: 5%;
+    /* margin-right: 20%; */
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
 }

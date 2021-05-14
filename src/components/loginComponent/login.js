@@ -1,6 +1,7 @@
 import React from 'react'
 import CardContainer from '../cardContainers/cardContainer'
 import './login.css'
+import HeaderRibbon from '../headerRibbon/headerRibbon'
 const login =(props) =>{
 
     const handleLogin = () => {
@@ -11,9 +12,12 @@ const login =(props) =>{
         props.history.push('/signup')
     }
     return(
+        <div>
+            <HeaderRibbon/>
     <div className="card-location">
     <CardContainer className="card-location">
-        <h1 className="header-title">Welcome to voters app</h1>
+        
+        <h4 className="header-title">Log in to vote for your favourite hacker</h4>
         <br/>
         <button className="w3-button w3-blue button-title"
         onClick = {(event) => handleLogin()}
@@ -30,6 +34,7 @@ const login =(props) =>{
         >Sign up</button>
 
     </CardContainer>
+    </div>
     </div>)
     
 }

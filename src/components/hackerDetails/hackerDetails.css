@@ -2,7 +2,7 @@
     color: blue;
     font-weight: bold;
 }
-.lebel{
+.lebel-details{
     color: purple;
     font-weight: bold;
 }
@@ -14,6 +14,11 @@
     margin-top: 2%;
     margin-left: 5%;
     margin-bottom: 2%;
+}
+.card-container{
+    margin-top: 2%;
+    width: 90%;
+    margin-left: 5%;
 }
  .img-content{
      width: 100px;
