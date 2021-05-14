@@ -21,9 +21,9 @@ const HackersData = (props) => {
         }
         ).then(res => {
             console.log(res)
-        }).catch(error => console.log(error))
+        }).catch(error => alert(error.response.data.errMsg))
 
-        history.push('/')
+        history.push('/dock')
     }
     const content = clikedVoting?
     <div>
@@ -33,7 +33,7 @@ const HackersData = (props) => {
         <img alt="" src={photo_url} className="w3-round img-content confirm-image"
                     onError={(event)=> {event.target.onError=null;
                     event.target.src=process.env.PUBLIC_URL+"/hacker.jpg"}}/>
-        <br/>
+        <br/><br/>
         <p className="lebel">once you confirm your vote it cant be edited without admin intervention!</p> 
         </div>
         <button className="w3-btn w3-red confitm-button"
@@ -43,22 +43,24 @@ const HackersData = (props) => {
             >close</button>
     </div>
     :<div className="content">
-            <span className="name-header"> <h1>{props.hacker.name}</h1></span>
-            <div className="w3-cell-row content">
-                <div className = "w3-cell cellcontent">
+            <span className="header-style"> <h3>{props.hacker.name}</h3></span>
+            <div className="w3-cell-row ">
+                <div className = "w3-cell cellsize">
                         <span className="paragraphs">
                             <br/>
                             <img alt="" src={photo_url} className="w3-round img-content"
                     onError={(event)=> {event.target.onError=null;
                     event.target.src=process.env.PUBLIC_URL+"/hacker.jpg"}}/>
-                            <p>Number of Challenges:{props.hacker.noOfChanllenges}</p>
-                            <p>Level of Expertise: {props.hacker.expertiseLevel}</p>
+                    <br/>
+                    <br/>
+                            <p className="paracontent">Number of Challenges:{props.hacker.noOfChanllenges}</p>
+                            <p className="paracontent">Level of Expertise: {props.hacker.expertiseLevel}</p>
                         </span>
                     </div>
                 
-                <div className = "w3-cell cellcontent">
+                <div className = "w3-cell cellsize">
                     <span className="paragraphs">
-                        <p>Expert in:</p>
+                        <p className="paracontent">Expert in:</p>
                         <table className="table-content">
                                 <tr><td>Data structure:</td><td>{props.hacker.expertIn.dataStructure}</td></tr>
                                 <tr><td>Algorithms:</td><td>{props.hacker.expertIn.algorithm}</td></tr>
@@ -67,7 +69,7 @@ const HackersData = (props) => {
                                 <tr><td>Python:</td><td>{props.hacker.expertIn.python}</td></tr>
                             
                         </table>
-                        <p className="lebel">Total votes:{props.hacker.votes}</p>
+                        <p className="lebel paracontent">Total votes:{props.hacker.votes}</p>
                     </span>
                 </div>
             </div>

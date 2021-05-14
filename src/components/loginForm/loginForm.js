@@ -5,11 +5,13 @@ import axios from 'axios'
 import {useDispatch} from 'react-redux'
 import * as actiontype from '../store/action'
 import HeaderRibbon from '../headerRibbon/headerRibbon'
+import Loader from '../loader/loader'
 
 const LoginForm = (props) => {
     const dispatch = useDispatch()
     const [userName,setUserName] = useState('')
     const[passwd, setPasswd] = useState('')
+    const[isWaiting,setIsWaiting] = useState(false)
     const handleCancel = () =>{
         props.history.push('/')
     }
@@ -21,6 +23,7 @@ const LoginForm = (props) => {
     }
     const handleLogin = async() => {
         const creds = { userName: userName, password: passwd}
+        setIsWaiting(true)
         try{
             const response = await axios.post('https://hacker-voting.herokuapp.com/user/login',creds);
             console.log(response)
@@ -28,14 +31,15 @@ const LoginForm = (props) => {
                 type: actiontype.SET_AUTH,
                 data: response.data
             })
+            setIsWaiting(false)
             props.history.push('/dock')
         }
         
         catch(error) {
-            console.log(error)
+            alert(error.response.data.errMsg)
         }
     }
-
+    const loader = isWaiting? <Loader/>:null
  return(
      <div>
          <HeaderRibbon/>
@@ -54,6 +58,7 @@ const LoginForm = (props) => {
         </div>
     </CardContainer>
     </div>
+    {loader}
     </div>
  )
 }

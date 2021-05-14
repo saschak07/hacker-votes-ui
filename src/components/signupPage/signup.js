@@ -28,8 +28,7 @@ const SignUp = (props) =>{
                 })
                 props.history.push('/dock')
             }catch(error){
-                console.log(error)
-                alert(error)
+                alert(error.response.data.errorMsg)
             }
             
         }

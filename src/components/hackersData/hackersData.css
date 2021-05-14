@@ -1,17 +1,20 @@
-.name-header{
-    color: blue;
+.header-style{
+    color: rgb(19, 19, 216);
     font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: left;
 }
 .lebel{
     color: purple;
     font-weight: bold;
+    margin-left: -26%;
 }
 .vote-lebel{
     color: rgb(50, 124, 7);
     font-weight: bold;
 }
 .content{
-    margin-top: 2%;
+    margin-top: 15%;
     margin-left: 5%;
     margin-bottom: 2%;
 }
@@ -22,9 +25,14 @@
  }
  .paragraphs{
      font-weight: bold;
+     font-size: 15px;
+     text-align: left;
  }
- .cellcontent{
-     width: 300px;
+ .paracontent{
+     text-align: left;
+ }
+ .cellsize{
+     width: 50%;
  }
  .table-content{
      margin-left: 5%;
@@ -38,6 +46,7 @@
      margin-left: 25%;
  }
  .confirm-header{
+     padding-top: 5%;
      margin-left: 20%;
  }
  .confitm-button{
