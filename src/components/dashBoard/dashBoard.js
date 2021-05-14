@@ -6,6 +6,7 @@ import {useSelector} from 'react-redux'
 import axios from 'axios'
 import './dashBoard.css'
 import VoteChart from '../voteChart/voteChart'
+import * as comparotrs from '../hackerComparators/comparators'
 const DashBoard = () =>{
     console.log('dash board rendered')
     const [hackers,setHackers] = useState([])
@@ -36,11 +37,33 @@ const DashBoard = () =>{
             setselectedHacker(hackers.find(data => data._id===id))
         }
     }
+    const handleSearch =(data) =>{
+        const filteredHacker = hackers.filter(element=>element.name.toUpperCase()
+        ===data.toUpperCase())
+        setHackers(filteredHacker)
+    }
+    const handleSort = (sortBy) =>{
+        let hackerList = [...hackers]
+        console.log(sortBy)
+        switch(sortBy){
+            case 'noc': hackerList.sort(comparotrs.numberOfChallengesCompare)
+                        setHackers(hackerList)
+                        return;
+            case 'nov': hackerList.sort(comparotrs.numberOfVotesCompare)
+                        setHackers(hackerList)
+                        return;
 
+            case 'exp': hackerList.sort(comparotrs.expertiseLevelCompare)
+                        setHackers(hackerList)
+                        return
+            default:
+                return
+        }
+    }
 
 return(
     <div >
-        <Navbar user={auth.authData}/>
+        <Navbar user={auth.authData} search={handleSearch} sort={handleSort}/>
         <div className="scrollable-position w-100 position-fixed position-trbl-0 
         dashboard-background">
             <div className="container-fluid position-relative

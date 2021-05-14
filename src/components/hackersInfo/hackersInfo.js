@@ -50,7 +50,9 @@ for(let i=0;i<10;i++){
     values.push(i)
 };
 const valueOptions = values.map(data => <option key={data} value={data}>{data}</option>)
-return(<CardContainer>
+return(
+<div className = "card-sizing">
+<CardContainer>
     <div className="content">
         <h1 className="name-header">Insert details of the hacker</h1>
         <div className="w3-cell-row content">
@@ -99,7 +101,8 @@ return(<CardContainer>
         <button className="button w3-btn w3-green" onClick={event=>handleSubmit()}>Submit</button>
         <button className="button w3-btn w3-blue" onClick={event=>handleClose()}>Close</button>
     </div>
-</CardContainer>)
+</CardContainer>
+</div>)
 }
 
 export default HackersInfo

@@ -10,6 +10,13 @@
     color: rgb(50, 124, 7);
     font-weight: bold;
 }
+
+.card-sizing{
+    margin-top: 2%;
+    margin-left: 10%;
+    width: 50%;
+}
+
 .content{
     margin-top: 2%;
     margin-left: 5%;

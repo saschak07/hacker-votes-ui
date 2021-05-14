@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 import {useSelector} from 'react-redux'
-import {useHistory} from 'react-router-dom'
 import CardContainer from '../cardContainers/cardContainer'
 import './hackersData.css'
 import axios from 'axios'
@@ -8,22 +7,18 @@ const HackersData = (props) => {
     const photo_url = `https://hacker-voting.herokuapp.com/hacker/${props.hacker._id}/photo`
     const [clikedVoting,setClickedVoting] = useState(false)
     const auth = useSelector(state => state)
-    const history = useHistory()
     const handleVote = () => {
         setClickedVoting(true)
     }
-    const handleConfirmVote = () =>{
-        axios.put(`https://hacker-voting.herokuapp.com/hackers/vote/${props.hacker._id}`,null,
-        {
+    const handleConfirmVote = async() =>{
+        try{
+            await axios.put(`https://hacker-voting.herokuapp.com/hackers/vote/${props.hacker._id}`,null,{
             headers:{
                 'Authorization':`Basic ${auth.authData.token}`
             }
-        }
-        ).then(res => {
-            console.log(res)
-        }).catch(error => alert(error.response.data.errMsg))
-
-        history.push('/dock')
+        })
+         }catch(error){ alert(error.response.data.errMsg)}
+         window.location.reload()
     }
     const content = clikedVoting?
     <div>

@@ -5,9 +5,11 @@ import axios from 'axios'
 import {useDispatch} from 'react-redux'
 import * as actiontype from '../store/action'
 import HeaderRibbon from '../headerRibbon/headerRibbon'
+import Loader from '../loader/loader'
 const SignUp = (props) =>{
         const [userCreds,setUserCreds] = useState({})
         const dispatch = useDispatch()
+        const[isWaiting,setIsWaiting] = useState(false)
         const handleCancel = () =>{
             props.history.push('/')
         }
@@ -26,12 +28,16 @@ const SignUp = (props) =>{
                     type: actiontype.SET_AUTH,
                     data: response.data
                 })
+                setIsWaiting(true)
                 props.history.push('/dock')
             }catch(error){
-                alert(error.response.data.errorMsg)
+                if(error.response){
+                    alert(error.response.data.errorMsg)
+                }
+                alert(error)
             }
-            
         }
+        const loader = isWaiting? <Loader/>:null
      return(
          <div>
              <HeaderRibbon/>
@@ -52,6 +58,7 @@ const SignUp = (props) =>{
             </div>
         </CardContainer>
         </div>
+        {loader}
         </div>
      )
     
