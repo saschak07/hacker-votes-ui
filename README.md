@@ -1,6 +1,6 @@
 # Voting app for best hackers !!!
 
-Very light-weight single page voting application, where a normal user can log in and vote from a list of hackers.
+Very light-weight single page voting application, where an user can log in and vote from a list of hackers.
 
 **This is a demo application, built completely on `MERN` stack, with `react` and `redux` based front-end, `node.js` powered with `express` at the backend and `mongo atlas` as supporting database.**
 
