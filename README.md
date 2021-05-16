@@ -12,7 +12,7 @@ https://hacker-loader.herokuapp.com/
 
 ` password: guest1234`
 
-Link to backend repository - https://github.com/saschak07/hacker-votes
+Link to backend repository - https://github.com/saschak07/hacker-votes/tree/master#back-end-for-voters-app-for-hackers
 
 ![voting-home](https://github.com/saschak07/image-store/blob/main/Screenshot%202021-05-16%20at%2010.51.45%20AM.png)
 
