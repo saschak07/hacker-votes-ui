@@ -18,7 +18,7 @@ Link to backend repository - https://github.com/saschak07/hacker-votes/tree/mast
 
 ![voting-list](https://github.com/saschak07/image-store/blob/main/Screenshot%202021-05-16%20at%2010.53.10%20AM.png)
 
-After logging in, a general voter can prform the following activities 
+After logging in, a general voter can perform the following activities 
 
 * Browse through the list of all voters (can sort the list based on Number
 of votes, number of challenges solved or expertise level of each listed hackers)
