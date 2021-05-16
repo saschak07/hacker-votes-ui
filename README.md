@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Voting app for best hackers !!!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Very light-weight single page voting application, where a normal user can log in and vote from a list of hackers.
 
-## Available Scripts
+**This is a demo application, built completely on `MERN` stack, with `react` and `redux` based front-end, `node.js` powered with `express` at the backend and `mongo atlas` as supporting database.**
 
-In the project directory, you can run:
+# Live link
 
-### `npm start`
+https://hacker-loader.herokuapp.com/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+` userName: guestuser`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+` password: guest1234`
 
-### `npm test`
+Link to backend repository - https://github.com/saschak07/hacker-votes/tree/master#back-end-for-voters-app-for-hackers
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![voting-home](https://github.com/saschak07/image-store/blob/main/Screenshot%202021-05-16%20at%2010.51.45%20AM.png)
 
-### `npm run build`
+![voting-list](https://github.com/saschak07/image-store/blob/main/Screenshot%202021-05-16%20at%2010.53.10%20AM.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+After logging in, a general voter can prform the following activities 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Browse through the list of all voters (can sort the list based on Number
+of votes, number of challenges solved or expertise level of each listed hackers)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Observe the latest voting trends represented in the form of a `donut chart`, that gets refreshed with every new votes.
 
-### `npm run eject`
+* User can also click on the `see details` button which pops up the complete details of 
+the selected hacker with an option to vote
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* user can vote for any hacker, but the voting can be performed only once with a logged in credential.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Apart from the general user functionality, there is also admin level provisioning.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+with the admin rights, details of new hackers can be added to the existing list of hackers.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This react application uses persistant redux to store logged-in user's details,(jwt auth token). in order to authenticate subsequent service calls.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
