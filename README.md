@@ -2,10 +2,36 @@
 
 Very light-weight single page voting application, where a normal user can log in and vote from a list of hackers.
 
+This is a demo application, built completely on `MERN` stack, with `react` and `redux` based front-end, `node.js` powered with `express` at the backend and `mongo atlas` as supporting database for the back-end
+
+# Live link
+
+https://hacker-loader.herokuapp.com/
+
+` userName: guestuser`
+
+` password: guest1234`
+
 ![voting-home](https://github.com/saschak07/image-store/blob/main/Screenshot%202021-05-16%20at%2010.51.45%20AM.png)
 
 ![voting-list](https://github.com/saschak07/image-store/blob/main/Screenshot%202021-05-16%20at%2010.53.10%20AM.png)
 
-After logging in the voter can do the 
+After logging in the voter can prform the following activities 
+
+* Browse through the list of all voters (can sort the list based on Number
+of votes, number of challenges solved or expertise level of each listed hackers)
+
+* User can also click on the see details button which pops up the complete details of 
+one hacker with an option to vote
+
+* user can vote for any hacker, but the voting can be performed with only once with one login credential.
+
+Apart from the general user functionality, there is also admin level provisioning.
+
+with the admin rights details of new hackers can be added to the existing list of hackers.
+
+
+
+This react application uses persistant redux to store logged-in user's details,(jwt auth token). in order to authenticate subsequent service calls.
 
 
