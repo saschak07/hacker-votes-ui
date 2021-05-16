@@ -2,7 +2,7 @@
 
 Very light-weight single page voting application, where a normal user can log in and vote from a list of hackers.
 
-This is a demo application, built completely on `MERN` stack, with `react` and `redux` based front-end, `node.js` powered with `express` at the backend and `mongo atlas` as supporting database for the back-end
+**This is a demo application, built completely on `MERN` stack, with `react` and `redux` based front-end, `node.js` powered with `express` at the backend and `mongo atlas` as supporting database for the back-end**
 
 # Live link
 
@@ -20,6 +20,8 @@ After logging in, a general voter can prform the following activities
 
 * Browse through the list of all voters (can sort the list based on Number
 of votes, number of challenges solved or expertise level of each listed hackers)
+
+* Observe the latest voting trends represented in the form of a `donut chart`, that gets refreshed with every new votes.
 
 * User can also click on the `see details` button which pops up the complete details of 
 the selected hacker with an option to vote
