@@ -16,19 +16,19 @@ https://hacker-loader.herokuapp.com/
 
 ![voting-list](https://github.com/saschak07/image-store/blob/main/Screenshot%202021-05-16%20at%2010.53.10%20AM.png)
 
-After logging in the voter can prform the following activities 
+After logging in, a general voter can prform the following activities 
 
 * Browse through the list of all voters (can sort the list based on Number
 of votes, number of challenges solved or expertise level of each listed hackers)
 
-* User can also click on the see details button which pops up the complete details of 
-one hacker with an option to vote
+* User can also click on the `see details` button which pops up the complete details of 
+the selected hacker with an option to vote
 
-* user can vote for any hacker, but the voting can be performed with only once with one login credential.
+* user can vote for any hacker, but the voting can be performed only once with a logged in credential.
 
 Apart from the general user functionality, there is also admin level provisioning.
 
-with the admin rights details of new hackers can be added to the existing list of hackers.
+with the admin rights, details of new hackers can be added to the existing list of hackers.
 
 
 
